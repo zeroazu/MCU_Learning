@@ -1,0 +1,1057 @@
+
+
+Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
+                                                                                               Sun Jul 28 20:14:12 2024
+
+Microchip MPLAB XC8 C Compiler v2.46 (Free license) build 20240104201356 Og1 
+     1                           	processor	16F84A
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataBANK0,global,class=CODE,delta=2,noexec
+     5                           	psect	strings,global,class=STRING,delta=2,noexec
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1,noexec
+     9                           	psect	clrtext,global,class=CODE,delta=2
+    10                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+    11                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+    12                           	psect	maintext,global,class=CODE,split=1,delta=2
+    13                           	psect	text1,local,class=CODE,merge=1,delta=2
+    14                           	psect	text2,local,class=CODE,merge=1,delta=2
+    15                           	psect	text3,local,class=CODE,merge=1,delta=2
+    16                           	psect	text4,local,class=CODE,merge=1,delta=2
+    17                           	psect	text5,local,class=CODE,merge=1,delta=2
+    18                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    19                           	dabs	1,0x4E,2
+    20     0000                     
+    21                           ; Generated 12/10/2023 GMT
+    22                           ; 
+    23                           ; Copyright © 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    24                           ; All rights reserved.
+    25                           ; 
+    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    27                           ; 
+    28                           ; Redistribution and use in source and binary forms, with or without modification, are
+    29                           ; permitted provided that the following conditions are met:
+    30                           ; 
+    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    32                           ;        conditions and the following disclaimer.
+    33                           ; 
+    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    35                           ;        of conditions and the following disclaimer in the documentation and/or other
+    36                           ;        materials provided with the distribution. Publication is not required when
+    37                           ;        this file is used in an embedded application.
+    38                           ; 
+    39                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    40                           ;        software without specific prior written permission.
+    41                           ; 
+    42                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    43                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    44                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    45                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    46                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    47                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    48                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    49                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    50                           ; 
+    51                           ; 
+    52                           ; Code-generator required, PIC16F84A Definitions
+    53                           ; 
+    54                           ; SFR Addresses
+    55     0000                     	;# 
+    56     0001                     	;# 
+    57     0002                     	;# 
+    58     0003                     	;# 
+    59     0004                     	;# 
+    60     0005                     	;# 
+    61     0006                     	;# 
+    62     0008                     	;# 
+    63     0009                     	;# 
+    64     000A                     	;# 
+    65     000B                     	;# 
+    66     0081                     	;# 
+    67     0085                     	;# 
+    68     0086                     	;# 
+    69     0088                     	;# 
+    70     0089                     	;# 
+    71     0000                     	;# 
+    72     0001                     	;# 
+    73     0002                     	;# 
+    74     0003                     	;# 
+    75     0004                     	;# 
+    76     0005                     	;# 
+    77     0006                     	;# 
+    78     0008                     	;# 
+    79     0009                     	;# 
+    80     000A                     	;# 
+    81     000B                     	;# 
+    82     0081                     	;# 
+    83     0085                     	;# 
+    84     0086                     	;# 
+    85     0088                     	;# 
+    86     0089                     	;# 
+    87                           
+    88                           	psect	idataBANK0
+    89     0316                     __pidataBANK0:
+    90                           
+    91                           ;initializer for _keyValue
+    92     0316  3401               	retlw	1
+    93                           
+    94                           	psect	strings
+    95     0001                     __pstrings:
+    96     0001                     stringtab:
+    97     0001                     __stringtab:
+    98     0001                     stringcode:	
+    99                           ;	String table - string pointers are 1 byte each
+   100                           
+   101     0001                     stringdir:
+   102     0001  3000               	movlw	high stringdir
+   103     0002  008A               	movwf	10
+   104     0003  0804               	movf	4,w
+   105     0004  0A84               	incf	4,f
+   106     0005  0782               	addwf	2,f
+   107     0006                     __stringbase:
+   108     0006  3400               	retlw	0
+   109     0007                     __end_of__stringtab:
+   110     0007                     _pattern:
+   111     0007  343F               	retlw	63
+   112     0008  3406               	retlw	6
+   113     0009  345B               	retlw	91
+   114     000A  344F               	retlw	79
+   115     000B  3466               	retlw	102
+   116     000C  346D               	retlw	109
+   117     000D  347D               	retlw	125
+   118     000E  3407               	retlw	7
+   119     000F  347F               	retlw	127
+   120     0010  346F               	retlw	111
+   121     0011                     __end_of_pattern:
+   122     0006                     _PORTB	set	6
+   123     0005                     _PORTAbits	set	5
+   124     000B                     _INTCONbits	set	11
+   125     0086                     _TRISB	set	134
+   126     0085                     _TRISA	set	133
+   127     0081                     _OPTION_REGbits	set	129
+   128                           
+   129                           	psect	cinit
+   130     03F7                     start_initialization:	
+   131                           ; #config settings
+   132                           
+   133     03F7                     __initialization:
+   134                           
+   135                           ; Initialize objects allocated to BANK0
+   136     03F7  2316               	fcall	__pidataBANK0	;fetch initializer
+   137     03F8  0098               	movwf	__pdataBANK0& (0+127)
+   138                           
+   139                           ; Clear objects allocated to BANK0
+   140     03F9  1383               	bcf	3,7	;select IRP bank0
+   141     03FA  300C               	movlw	low __pbssBANK0
+   142     03FB  0084               	movwf	4
+   143     03FC  3018               	movlw	low (__pbssBANK0+12)
+   144     03FD  231E               	fcall	clear_ram0
+   145     03FE                     end_of_initialization:	
+   146                           ;End of C runtime variable initialization code
+   147                           
+   148     03FE                     __end_of__initialization:
+   149     03FE  0183               	clrf	3
+   150     03FF  2B17               	ljmp	_main	;jump to C main() function
+   151                           
+   152                           	psect	bssBANK0
+   153     000C                     __pbssBANK0:
+   154     000C                     _digit:
+   155     000C                     	ds	4
+   156     0010                     _timecounter:
+   157     0010                     	ds	2
+   158     0012                     _prev_state:
+   159     0012                     	ds	1
+   160     0013                     _myCounter:
+   161     0013                     	ds	1
+   162     0014                     _prekey:
+   163     0014                     	ds	1
+   164     0015                     _keyin:
+   165     0015                     	ds	1
+   166     0016                     _mode:
+   167     0016                     	ds	1
+   168     0017                     _DebounceTimer:
+   169     0017                     	ds	1
+   170                           
+   171                           	psect	dataBANK0
+   172     0018                     __pdataBANK0:
+   173     0018                     _keyValue:
+   174     0018                     	ds	1
+   175                           
+   176                           	psect	clrtext
+   177     031E                     clear_ram0:	
+   178                           ;	Called with FSR containing the base address, and
+   179                           ;	W with the last address+1
+   180                           
+   181     031E  0064               	clrwdt	;clear the watchdog before getting into this loop
+   182     031F                     clrloop0:
+   183     031F  0180               	clrf	0	;clear RAM location pointed to by FSR
+   184     0320  0A84               	incf	4,f	;increment pointer
+   185     0321  0604               	xorwf	4,w	;XOR with final address
+   186     0322  1903               	btfsc	3,2	;have we reached the end yet?
+   187     0323  3400               	retlw	0	;all done for this memory range, return
+   188     0324  0604               	xorwf	4,w	;XOR again to restore value
+   189     0325  2B1F               	goto	clrloop0	;do the next byte
+   190                           
+   191                           	psect	cstackCOMMON
+   192     0000                     __pcstackCOMMON:
+   193     0000                     ??_SystemInitial:
+   194     0000                     ??_TimerRefresh:	
+   195                           ; 1 bytes @ 0x0
+   196                           
+   197     0000                     ??_Debounce:	
+   198                           ; 1 bytes @ 0x0
+   199                           
+   200     0000                     ??_Stopwatch:	
+   201                           ; 1 bytes @ 0x0
+   202                           
+   203     0000                     ??_main:	
+   204                           ; 1 bytes @ 0x0
+   205                           
+   206                           
+   207                           	psect	cstackBANK0
+   208     0019                     __pcstackBANK0:	
+   209                           ; 1 bytes @ 0x0
+   210                           
+   211     0019                     ?_SystemInitial:
+   212     0019                     ?_TimerRefresh:	
+   213                           ; 1 bytes @ 0x0
+   214                           
+   215     0019                     ?_Debounce:	
+   216                           ; 1 bytes @ 0x0
+   217                           
+   218     0019                     ?_Stopwatch:	
+   219                           ; 1 bytes @ 0x0
+   220                           
+   221     0019                     ?_Display:	
+   222                           ; 1 bytes @ 0x0
+   223                           
+   224     0019                     ??_Display:	
+   225                           ; 1 bytes @ 0x0
+   226                           
+   227     0019                     ?_main:	
+   228                           ; 1 bytes @ 0x0
+   229                           
+   230                           
+   231                           ; 1 bytes @ 0x0
+   232     0019                     	ds	1
+   233                           
+   234                           	psect	maintext
+   235     0317                     __pmaintext:	
+   236 ;;
+   237 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   238 ;;
+   239 ;; *************** function _main *****************
+   240 ;; Defined at:
+   241 ;;		line 58 in file "main.c"
+   242 ;; Parameters:    Size  Location     Type
+   243 ;;		None
+   244 ;; Auto vars:     Size  Location     Type
+   245 ;;		None
+   246 ;; Return value:  Size  Location     Type
+   247 ;;                  1    wreg      void 
+   248 ;; Registers used:
+   249 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   250 ;; Tracked objects:
+   251 ;;		On entry : B00/0
+   252 ;;		On exit  : 0/0
+   253 ;;		Unchanged: 0/0
+   254 ;; Data sizes:     COMMON   BANK0
+   255 ;;      Params:         0       0
+   256 ;;      Locals:         0       0
+   257 ;;      Temps:          0       0
+   258 ;;      Totals:         0       0
+   259 ;;Total ram usage:        0 bytes
+   260 ;; Hardware stack levels required when called: 2
+   261 ;; This function calls:
+   262 ;;		_Debounce
+   263 ;;		_Display
+   264 ;;		_Stopwatch
+   265 ;;		_SystemInitial
+   266 ;;		_TimerRefresh
+   267 ;; This function is called by:
+   268 ;;		Startup code after reset
+   269 ;; This function uses a non-reentrant model
+   270 ;;
+   271                           
+   272     0317                     _main:	
+   273                           ;psect for function _main
+   274                           
+   275     0317                     l855:	
+   276                           ;incstack = 0
+   277                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   278                           
+   279                           
+   280                           ;main.c: 59:     SystemInitial();
+   281     0317  2326               	fcall	_SystemInitial
+   282     0318                     l857:
+   283                           
+   284                           ;main.c: 61:         TimerRefresh();
+   285     0318  234B               	fcall	_TimerRefresh
+   286     0319                     l859:
+   287                           
+   288                           ;main.c: 62:  Debounce();
+   289     0319  2331               	fcall	_Debounce
+   290     031A                     l861:
+   291                           
+   292                           ;main.c: 63:         Stopwatch();
+   293     031A  23AF               	fcall	_Stopwatch
+   294     031B                     l863:
+   295                           
+   296                           ;main.c: 64:         Display();
+   297     031B  236A               	fcall	_Display
+   298     031C  2B18               	goto	l857
+   299     031D  2800               	ljmp	start
+   300     031E                     __end_of_main:
+   301                           
+   302                           	psect	text1
+   303     034B                     __ptext1:	
+   304 ;; *************** function _TimerRefresh *****************
+   305 ;; Defined at:
+   306 ;;		line 76 in file "main.c"
+   307 ;; Parameters:    Size  Location     Type
+   308 ;;		None
+   309 ;; Auto vars:     Size  Location     Type
+   310 ;;		None
+   311 ;; Return value:  Size  Location     Type
+   312 ;;                  1    wreg      void 
+   313 ;; Registers used:
+   314 ;;		wreg, status,2, status,0, btemp+1
+   315 ;; Tracked objects:
+   316 ;;		On entry : 0/0
+   317 ;;		On exit  : 0/0
+   318 ;;		Unchanged: 0/0
+   319 ;; Data sizes:     COMMON   BANK0
+   320 ;;      Params:         0       0
+   321 ;;      Locals:         0       0
+   322 ;;      Temps:          0       0
+   323 ;;      Totals:         0       0
+   324 ;;Total ram usage:        0 bytes
+   325 ;; Hardware stack levels used: 1
+   326 ;; This function calls:
+   327 ;;		Nothing
+   328 ;; This function is called by:
+   329 ;;		_main
+   330 ;; This function uses a non-reentrant model
+   331 ;;
+   332                           
+   333     034B                     _TimerRefresh:	
+   334                           ;psect for function _TimerRefresh
+   335                           
+   336     034B                     l759:	
+   337                           ;incstack = 0
+   338                           ; Regs used in _TimerRefresh: [wreg+status,2+status,0+btemp+1]
+   339                           
+   340                           
+   341                           ;main.c: 77:     if (INTCONbits.T0IF){
+   342     034B  1D0B               	btfss	11,2	;volatile
+   343     034C  2B4E               	goto	u151
+   344     034D  2B4F               	goto	u150
+   345     034E                     u151:
+   346     034E  2B69               	goto	l59
+   347     034F                     u150:
+   348     034F                     l761:
+   349                           
+   350                           ;main.c: 78:         INTCONbits.T0IF = 0;
+   351     034F  110B               	bcf	11,2	;volatile
+   352     0350                     l763:
+   353                           
+   354                           ;main.c: 79:         myCounter.tmr0Counter ++;
+   355     0350  3001               	movlw	1
+   356     0351  00CF               	movwf	btemp+1
+   357     0352  084F               	movf	btemp+1,w
+   358     0353  1283               	bcf	3,5	;RP0=0, select bank0
+   359     0354  0793               	addwf	_myCounter,f
+   360     0355                     l765:
+   361                           
+   362                           ;main.c: 80:  if (DebounceTimer != 0) DebounceTimer++;
+   363     0355  0817               	movf	_DebounceTimer,w
+   364     0356  1903               	btfsc	3,2
+   365     0357  2B59               	goto	u161
+   366     0358  2B5A               	goto	u160
+   367     0359                     u161:
+   368     0359  2B5E               	goto	l769
+   369     035A                     u160:
+   370     035A                     l767:
+   371     035A  3001               	movlw	1
+   372     035B  00CF               	movwf	btemp+1
+   373     035C  084F               	movf	btemp+1,w
+   374     035D  0797               	addwf	_DebounceTimer,f
+   375     035E                     l769:
+   376                           
+   377                           ;main.c: 81:         if (mode) timecounter++;
+   378     035E  0816               	movf	_mode,w
+   379     035F  1903               	btfsc	3,2
+   380     0360  2B62               	goto	u171
+   381     0361  2B63               	goto	u170
+   382     0362                     u171:
+   383     0362  2B69               	goto	l59
+   384     0363                     u170:
+   385     0363                     l771:
+   386     0363  3001               	movlw	1
+   387     0364  0790               	addwf	_timecounter,f
+   388     0365  1803               	skipnc
+   389     0366  0A91               	incf	_timecounter+1,f
+   390     0367  3000               	movlw	0
+   391     0368  0791               	addwf	_timecounter+1,f
+   392     0369                     l59:
+   393     0369  0008               	return
+   394     036A                     __end_of_TimerRefresh:
+   395                           
+   396                           	psect	text2
+   397     0326                     __ptext2:	
+   398 ;; *************** function _SystemInitial *****************
+   399 ;; Defined at:
+   400 ;;		line 68 in file "main.c"
+   401 ;; Parameters:    Size  Location     Type
+   402 ;;		None
+   403 ;; Auto vars:     Size  Location     Type
+   404 ;;		None
+   405 ;; Return value:  Size  Location     Type
+   406 ;;                  1    wreg      void 
+   407 ;; Registers used:
+   408 ;;		wreg, status,2, status,0
+   409 ;; Tracked objects:
+   410 ;;		On entry : 0/0
+   411 ;;		On exit  : 0/0
+   412 ;;		Unchanged: 0/0
+   413 ;; Data sizes:     COMMON   BANK0
+   414 ;;      Params:         0       0
+   415 ;;      Locals:         0       0
+   416 ;;      Temps:          0       0
+   417 ;;      Totals:         0       0
+   418 ;;Total ram usage:        0 bytes
+   419 ;; Hardware stack levels used: 1
+   420 ;; This function calls:
+   421 ;;		Nothing
+   422 ;; This function is called by:
+   423 ;;		_main
+   424 ;; This function uses a non-reentrant model
+   425 ;;
+   426                           
+   427     0326                     _SystemInitial:	
+   428                           ;psect for function _SystemInitial
+   429                           
+   430     0326                     l749:	
+   431                           ;incstack = 0
+   432                           ; Regs used in _SystemInitial: [wreg+status,2+status,0]
+   433                           
+   434                           
+   435                           ;main.c: 69:     OPTION_REGbits.PS = 0b010;
+   436     0326  1683               	bsf	3,5	;RP0=1, select bank1
+   437     0327  0801               	movf	1,w	;volatile
+   438     0328  39F8               	andlw	-8
+   439     0329  3802               	iorlw	2
+   440     032A  0081               	movwf	1	;volatile
+   441     032B                     l751:
+   442                           
+   443                           ;main.c: 70:     OPTION_REGbits.T0CS = 0;
+   444     032B  1281               	bcf	1,5	;volatile
+   445     032C                     l753:
+   446                           
+   447                           ;main.c: 71:     OPTION_REGbits.PSA = 0;
+   448     032C  1181               	bcf	1,3	;volatile
+   449     032D                     l755:
+   450                           
+   451                           ;main.c: 72:     TRISA = 0b00010000;
+   452     032D  3010               	movlw	16
+   453     032E  0085               	movwf	5	;volatile
+   454     032F                     l757:
+   455                           
+   456                           ;main.c: 73:     TRISB = 0b00000000;
+   457     032F  0186               	clrf	6	;volatile
+   458     0330                     l53:
+   459     0330  0008               	return
+   460     0331                     __end_of_SystemInitial:
+   461                           
+   462                           	psect	text3
+   463     03AF                     __ptext3:	
+   464 ;; *************** function _Stopwatch *****************
+   465 ;; Defined at:
+   466 ;;		line 96 in file "main.c"
+   467 ;; Parameters:    Size  Location     Type
+   468 ;;		None
+   469 ;; Auto vars:     Size  Location     Type
+   470 ;;		None
+   471 ;; Return value:  Size  Location     Type
+   472 ;;                  1    wreg      void 
+   473 ;; Registers used:
+   474 ;;		wreg, status,2, status,0
+   475 ;; Tracked objects:
+   476 ;;		On entry : 0/0
+   477 ;;		On exit  : 0/0
+   478 ;;		Unchanged: 0/0
+   479 ;; Data sizes:     COMMON   BANK0
+   480 ;;      Params:         0       0
+   481 ;;      Locals:         0       0
+   482 ;;      Temps:          0       0
+   483 ;;      Totals:         0       0
+   484 ;;Total ram usage:        0 bytes
+   485 ;; Hardware stack levels used: 1
+   486 ;; This function calls:
+   487 ;;		Nothing
+   488 ;; This function is called by:
+   489 ;;		_main
+   490 ;; This function uses a non-reentrant model
+   491 ;;
+   492                           
+   493     03AF                     _Stopwatch:	
+   494                           ;psect for function _Stopwatch
+   495                           
+   496     03AF                     l787:	
+   497                           ;incstack = 0
+   498                           ; Regs used in _Stopwatch: [wreg+status,2+status,0]
+   499                           
+   500                           
+   501                           ;main.c: 97:     if (keyValue == 0){
+   502     03AF  1283               	bcf	3,5	;RP0=0, select bank0
+   503     03B0  0818               	movf	_keyValue,w
+   504     03B1  1D03               	btfss	3,2
+   505     03B2  2BB4               	goto	u201
+   506     03B3  2BB5               	goto	u200
+   507     03B4                     u201:
+   508     03B4  2BBF               	goto	l793
+   509     03B5                     u200:
+   510     03B5                     l789:
+   511                           
+   512                           ;main.c: 98:         mode = !mode;
+   513     03B5  0816               	movf	_mode,w
+   514     03B6  1903               	btfsc	3,2
+   515     03B7  2BB9               	goto	u211
+   516     03B8  2BBB               	goto	u210
+   517     03B9                     u211:
+   518     03B9  3001               	movlw	1
+   519     03BA  2BBC               	goto	u220
+   520     03BB                     u210:
+   521     03BB  3000               	movlw	0
+   522     03BC                     u220:
+   523     03BC  0096               	movwf	_mode
+   524     03BD                     l791:
+   525                           
+   526                           ;main.c: 99:         keyValue = 1;
+   527     03BD  0198               	clrf	_keyValue
+   528     03BE  0A98               	incf	_keyValue,f
+   529     03BF                     l793:
+   530                           
+   531                           ;main.c: 101:     if(timecounter > 488){
+   532     03BF  3001               	movlw	1
+   533     03C0  0211               	subwf	_timecounter+1,w
+   534     03C1  30E9               	movlw	233
+   535     03C2  1903               	skipnz
+   536     03C3  0210               	subwf	_timecounter,w
+   537     03C4  1C03               	skipc
+   538     03C5  2BC7               	goto	u231
+   539     03C6  2BC8               	goto	u230
+   540     03C7                     u231:
+   541     03C7  2BF6               	goto	l78
+   542     03C8                     u230:
+   543     03C8                     l795:
+   544                           
+   545                           ;main.c: 102:         timecounter = 0;
+   546     03C8  0190               	clrf	_timecounter
+   547     03C9  0191               	clrf	_timecounter+1
+   548     03CA                     l797:
+   549                           
+   550                           ;main.c: 103:         if (digit[0] == 9) {
+   551     03CA  3009               	movlw	9
+   552     03CB  060C               	xorwf	_digit,w
+   553     03CC  1D03               	btfss	3,2
+   554     03CD  2BCF               	goto	u241
+   555     03CE  2BD0               	goto	u240
+   556     03CF                     u241:
+   557     03CF  2BF3               	goto	l819
+   558     03D0                     u240:
+   559     03D0                     l799:
+   560                           
+   561                           ;main.c: 104:             digit[0] = 0;
+   562     03D0  018C               	clrf	_digit
+   563     03D1                     l801:
+   564                           
+   565                           ;main.c: 105:             if (digit[1] == 5) {
+   566     03D1  3005               	movlw	5
+   567     03D2  060D               	xorwf	_digit+1,w
+   568     03D3  1D03               	btfss	3,2
+   569     03D4  2BD6               	goto	u251
+   570     03D5  2BD7               	goto	u250
+   571     03D6                     u251:
+   572     03D6  2BEF               	goto	l817
+   573     03D7                     u250:
+   574     03D7                     l803:
+   575                           
+   576                           ;main.c: 106:                 digit[1] = 0;
+   577     03D7  018D               	clrf	_digit+1
+   578     03D8                     l805:
+   579                           
+   580                           ;main.c: 107:                 if (digit[2] == 9) {
+   581     03D8  3009               	movlw	9
+   582     03D9  060E               	xorwf	_digit+2,w
+   583     03DA  1D03               	btfss	3,2
+   584     03DB  2BDD               	goto	u261
+   585     03DC  2BDE               	goto	u260
+   586     03DD                     u261:
+   587     03DD  2BEB               	goto	l815
+   588     03DE                     u260:
+   589     03DE                     l807:
+   590                           
+   591                           ;main.c: 108:                     digit[2] = 0;
+   592     03DE  018E               	clrf	_digit+2
+   593     03DF                     l809:
+   594                           
+   595                           ;main.c: 109:                     if (digit[3] == 5)
+   596     03DF  3005               	movlw	5
+   597     03E0  060F               	xorwf	_digit+3,w
+   598     03E1  1D03               	btfss	3,2
+   599     03E2  2BE4               	goto	u271
+   600     03E3  2BE5               	goto	u270
+   601     03E4                     u271:
+   602     03E4  2BE7               	goto	l813
+   603     03E5                     u270:
+   604     03E5                     l811:
+   605                           
+   606                           ;main.c: 110:                         digit[3] = 0;
+   607     03E5  018F               	clrf	_digit+3
+   608     03E6  2BF6               	goto	l78
+   609     03E7                     l813:
+   610     03E7  080F               	movf	_digit+3,w
+   611     03E8  3E01               	addlw	1
+   612     03E9  008F               	movwf	_digit+3
+   613     03EA  2BF6               	goto	l78
+   614     03EB                     l815:
+   615     03EB  080E               	movf	_digit+2,w
+   616     03EC  3E01               	addlw	1
+   617     03ED  008E               	movwf	_digit+2
+   618     03EE  2BF6               	goto	l78
+   619     03EF                     l817:
+   620     03EF  080D               	movf	_digit+1,w
+   621     03F0  3E01               	addlw	1
+   622     03F1  008D               	movwf	_digit+1
+   623     03F2  2BF6               	goto	l78
+   624     03F3                     l819:
+   625     03F3  080C               	movf	_digit,w
+   626     03F4  3E01               	addlw	1
+   627     03F5  008C               	movwf	_digit
+   628     03F6                     l78:
+   629     03F6  0008               	return
+   630     03F7                     __end_of_Stopwatch:
+   631                           
+   632                           	psect	text4
+   633     036A                     __ptext4:	
+   634 ;; *************** function _Display *****************
+   635 ;; Defined at:
+   636 ;;		line 118 in file "main.c"
+   637 ;; Parameters:    Size  Location     Type
+   638 ;;		None
+   639 ;; Auto vars:     Size  Location     Type
+   640 ;;		None
+   641 ;; Return value:  Size  Location     Type
+   642 ;;                  1    wreg      void 
+   643 ;; Registers used:
+   644 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath
+   645 ;; Tracked objects:
+   646 ;;		On entry : 0/0
+   647 ;;		On exit  : 0/0
+   648 ;;		Unchanged: 0/0
+   649 ;; Data sizes:     COMMON   BANK0
+   650 ;;      Params:         0       0
+   651 ;;      Locals:         0       0
+   652 ;;      Temps:          0       1
+   653 ;;      Totals:         0       1
+   654 ;;Total ram usage:        1 bytes
+   655 ;; Hardware stack levels used: 2
+   656 ;; This function calls:
+   657 ;;		Nothing
+   658 ;; This function is called by:
+   659 ;;		_main
+   660 ;; This function uses a non-reentrant model
+   661 ;;
+   662                           
+   663     036A                     _Display:	
+   664                           ;psect for function _Display
+   665                           
+   666     036A                     l821:	
+   667                           ;incstack = 0
+   668                           ; Regs used in _Display: [wreg-fsr0h+status,2+status,0+pclath]
+   669                           
+   670                           
+   671                           ;main.c: 119:     if(myCounter.t244_122Hz != prev_state.var){
+   672     036A  1283               	bcf	3,5	;RP0=0, select bank0
+   673     036B  0812               	movf	_prev_state,w
+   674     036C  3903               	andlw	3
+   675     036D  0099               	movwf	??_Display
+   676     036E  0813               	movf	_myCounter,w
+   677     036F  3903               	andlw	3
+   678     0370  0619               	xorwf	??_Display,w
+   679     0371  1903               	skipnz
+   680     0372  2B74               	goto	u281
+   681     0373  2B75               	goto	u280
+   682     0374                     u281:
+   683     0374  2BAE               	goto	l89
+   684     0375                     u280:
+   685     0375                     l823:
+   686                           
+   687                           ;main.c: 120:         PORTB = 0;
+   688     0375  0186               	clrf	6	;volatile
+   689     0376                     l825:
+   690                           
+   691                           ;main.c: 121:         PORTAbits.RA0 = 0; PORTAbits.RA1 = 0; PORTAbits.RA2 = 0; PORTAbits
+      +                          .RA3 = 0;
+   692     0376  1005               	bcf	5,0	;volatile
+   693     0377                     l827:
+   694     0377  1085               	bcf	5,1	;volatile
+   695     0378                     l829:
+   696     0378  1105               	bcf	5,2	;volatile
+   697     0379                     l831:
+   698     0379  1185               	bcf	5,3	;volatile
+   699                           
+   700                           ;main.c: 122:      switch (myCounter.t244_122Hz) {
+   701     037A  2B97               	goto	l851
+   702     037B                     l833:
+   703                           
+   704                           ;main.c: 124:                 PORTB = pattern[digit[0]];
+   705     037B  080C               	movf	_digit,w
+   706     037C  3E01               	addlw	low ((_pattern-__stringbase)| (0+32768))
+   707     037D  0084               	movwf	4
+   708     037E  2001               	fcall	stringdir
+   709     037F  0086               	movwf	6	;volatile
+   710     0380                     l835:
+   711                           
+   712                           ;main.c: 125:                 PORTAbits.RA0 = 1;
+   713     0380  1405               	bsf	5,0	;volatile
+   714                           
+   715                           ;main.c: 126:                 break;
+   716     0381  2BA6               	goto	l853
+   717     0382                     l837:
+   718                           
+   719                           ;main.c: 128:                 PORTB = pattern[digit[1]];
+   720     0382  080D               	movf	_digit+1,w
+   721     0383  3E01               	addlw	low ((_pattern-__stringbase)| (0+32768))
+   722     0384  0084               	movwf	4
+   723     0385  2001               	fcall	stringdir
+   724     0386  0086               	movwf	6	;volatile
+   725     0387                     l839:
+   726                           
+   727                           ;main.c: 129:                 PORTAbits.RA1 = 1;
+   728     0387  1485               	bsf	5,1	;volatile
+   729                           
+   730                           ;main.c: 130:                 break;
+   731     0388  2BA6               	goto	l853
+   732     0389                     l841:
+   733                           
+   734                           ;main.c: 132:                 PORTB = pattern[digit[2]];
+   735     0389  080E               	movf	_digit+2,w
+   736     038A  3E01               	addlw	low ((_pattern-__stringbase)| (0+32768))
+   737     038B  0084               	movwf	4
+   738     038C  2001               	fcall	stringdir
+   739     038D  0086               	movwf	6	;volatile
+   740     038E                     l843:
+   741                           
+   742                           ;main.c: 133:                 PORTAbits.RA2 = 1;
+   743     038E  1505               	bsf	5,2	;volatile
+   744                           
+   745                           ;main.c: 134:                 break;
+   746     038F  2BA6               	goto	l853
+   747     0390                     l845:
+   748                           
+   749                           ;main.c: 136:                 PORTB = pattern[digit[3]];
+   750     0390  080F               	movf	_digit+3,w
+   751     0391  3E01               	addlw	low ((_pattern-__stringbase)| (0+32768))
+   752     0392  0084               	movwf	4
+   753     0393  2001               	fcall	stringdir
+   754     0394  0086               	movwf	6	;volatile
+   755     0395                     l847:
+   756                           
+   757                           ;main.c: 137:                 PORTAbits.RA3 = 1;
+   758     0395  1585               	bsf	5,3	;volatile
+   759                           
+   760                           ;main.c: 138:                 break;
+   761     0396  2BA6               	goto	l853
+   762     0397                     l851:
+   763     0397  0813               	movf	_myCounter,w
+   764     0398  3903               	andlw	3
+   765                           
+   766                           ; Switch size 1, requested type "simple"
+   767                           ; Number of cases is 4, Range of values is 0 to 3
+   768                           ; switch strategies available:
+   769                           ; Name         Instructions Cycles
+   770                           ; direct_byte           10     6 (fixed)
+   771                           ; simple_byte           13     7 (average)
+   772                           ; jumptable            260     6 (fixed)
+   773                           ;	Chosen strategy is simple_byte
+   774     0399  3A00               	xorlw	0	; case 0
+   775     039A  1903               	skipnz
+   776     039B  2B7B               	goto	l833
+   777     039C  3A01               	xorlw	1	; case 1
+   778     039D  1903               	skipnz
+   779     039E  2B82               	goto	l837
+   780     039F  3A03               	xorlw	3	; case 2
+   781     03A0  1903               	skipnz
+   782     03A1  2B89               	goto	l841
+   783     03A2  3A01               	xorlw	1	; case 3
+   784     03A3  1903               	skipnz
+   785     03A4  2B90               	goto	l845
+   786     03A5  2BA6               	goto	l853
+   787     03A6                     l853:
+   788                           
+   789                           ;main.c: 142:         prev_state.var = myCounter.t244_122Hz;
+   790     03A6  0813               	movf	_myCounter,w
+   791     03A7  3903               	andlw	3
+   792     03A8  0099               	movwf	??_Display
+   793     03A9  0812               	movf	_prev_state,w
+   794     03AA  0619               	xorwf	??_Display,w
+   795     03AB  39FC               	andlw	-4
+   796     03AC  0619               	xorwf	??_Display,w
+   797     03AD  0092               	movwf	_prev_state
+   798     03AE                     l89:
+   799     03AE  0008               	return
+   800     03AF                     __end_of_Display:
+   801                           
+   802                           	psect	text5
+   803     0331                     __ptext5:	
+   804 ;; *************** function _Debounce *****************
+   805 ;; Defined at:
+   806 ;;		line 85 in file "main.c"
+   807 ;; Parameters:    Size  Location     Type
+   808 ;;		None
+   809 ;; Auto vars:     Size  Location     Type
+   810 ;;		None
+   811 ;; Return value:  Size  Location     Type
+   812 ;;                  1    wreg      void 
+   813 ;; Registers used:
+   814 ;;		wreg, status,2
+   815 ;; Tracked objects:
+   816 ;;		On entry : 0/0
+   817 ;;		On exit  : 0/0
+   818 ;;		Unchanged: 0/0
+   819 ;; Data sizes:     COMMON   BANK0
+   820 ;;      Params:         0       0
+   821 ;;      Locals:         0       0
+   822 ;;      Temps:          0       0
+   823 ;;      Totals:         0       0
+   824 ;;Total ram usage:        0 bytes
+   825 ;; Hardware stack levels used: 1
+   826 ;; This function calls:
+   827 ;;		Nothing
+   828 ;; This function is called by:
+   829 ;;		_main
+   830 ;; This function uses a non-reentrant model
+   831 ;;
+   832                           
+   833     0331                     _Debounce:	
+   834                           ;psect for function _Debounce
+   835                           
+   836     0331                     l773:	
+   837                           ;incstack = 0
+   838                           ; Regs used in _Debounce: [wreg+status,2]
+   839                           
+   840                           
+   841                           ;main.c: 86:     keyin = PORTAbits.RA4;
+   842     0331  3000               	movlw	0
+   843     0332  1283               	bcf	3,5	;RP0=0, select bank0
+   844     0333  1A05               	btfsc	5,4	;volatile
+   845     0334  3001               	movlw	1
+   846     0335  0095               	movwf	_keyin
+   847     0336                     l775:
+   848                           
+   849                           ;main.c: 87:     if (keyin != prekey) DebounceTimer = 1;
+   850     0336  0815               	movf	_keyin,w
+   851     0337  0614               	xorwf	_prekey,w
+   852     0338  1903               	skipnz
+   853     0339  2B3B               	goto	u181
+   854     033A  2B3C               	goto	u180
+   855     033B                     u181:
+   856     033B  2B3F               	goto	l779
+   857     033C                     u180:
+   858     033C                     l777:
+   859     033C  0197               	clrf	_DebounceTimer
+   860     033D  0A97               	incf	_DebounceTimer,f
+   861     033E  2B48               	goto	l785
+   862     033F                     l779:
+   863                           
+   864                           ;main.c: 89:         if(DebounceTimer > 8){
+   865     033F  3009               	movlw	9
+   866     0340  0217               	subwf	_DebounceTimer,w
+   867     0341  1C03               	skipc
+   868     0342  2B44               	goto	u191
+   869     0343  2B45               	goto	u190
+   870     0344                     u191:
+   871     0344  2B48               	goto	l785
+   872     0345                     u190:
+   873     0345                     l781:
+   874                           
+   875                           ;main.c: 90:             keyValue = keyin;
+   876     0345  0815               	movf	_keyin,w
+   877     0346  0098               	movwf	_keyValue
+   878     0347                     l783:
+   879                           
+   880                           ;main.c: 91:             DebounceTimer = 0;
+   881     0347  0197               	clrf	_DebounceTimer
+   882     0348                     l785:
+   883                           
+   884                           ;main.c: 93:     prekey = keyin;
+   885     0348  0815               	movf	_keyin,w
+   886     0349  0094               	movwf	_prekey
+   887     034A                     l65:
+   888     034A  0008               	return
+   889     034B                     __end_of_Debounce:
+   890     004E                     btemp	set	78	;btemp
+   891     004E                     wtemp0	set	78
+   892                           
+   893                           	psect	config
+   894                           
+   895                           ;Config register CONFIG @ 0x2007
+   896                           ;	Oscillator Selection bits
+   897                           ;	FOSC = XT, XT oscillator
+   898                           ;	Watchdog Timer
+   899                           ;	WDTE = OFF, WDT disabled
+   900                           ;	Power-up Timer Enable bit
+   901                           ;	PWRTE = OFF, Power-up Timer is disabled
+   902                           ;	Code Protection bit
+   903                           ;	CP = OFF, Code protection disabled
+   904     2007                     	org	8199
+   905     2007  3FF9               	dw	16377
+
+Data Sizes:
+    Strings     0
+    Constant    10
+    Data        1
+    BSS         12
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            66      1      14
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_Display
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+                           _Debounce
+                            _Display
+                          _Stopwatch
+                      _SystemInitial
+                       _TimerRefresh
+ ---------------------------------------------------------------------------------
+ (1) _TimerRefresh                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _SystemInitial                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _Stopwatch                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _Display                                              1     1      0       0
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _Debounce                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Debounce
+   _Display
+   _Stopwatch
+   _SystemInitial
+   _TimerRefresh
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               42      1       E       3       21.2%
+BITBANK0            42      0       0       5        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITCOMMON            0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0       E       6        0.0%
+ABS                  0      0       E       4        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              40      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.46 build 20240104201356 
+Symbol Table                                                                                   Sun Jul 28 20:14:12 2024
+
+                      pc 0002                       l53 0330                       l65 034A  
+                     l59 0369                       l78 03F6                       l89 03AE  
+                     fsr 0004                      l801 03D1                      l811 03E5  
+                    l803 03D7                      l821 036A                      l813 03E7  
+                    l805 03D8                      l831 0379                      l823 0375  
+                    l807 03DE                      l815 03EB                      l751 032B  
+                    l841 0389                      l833 037B                      l825 0376  
+                    l809 03DF                      l817 03EF                      l753 032C  
+                    l761 034F                      l843 038E                      l835 0380  
+                    l851 0397                      l827 0377                      l819 03F3  
+                    l755 032D                      l771 0363                      l763 0350  
+                    l781 0345                      l773 0331                      l845 0390  
+                    l837 0382                      l853 03A6                      l829 0378  
+                    l757 032F                      l749 0326                      l765 0355  
+                    l861 031A                      l783 0347                      l775 0336  
+                    l847 0395                      l839 0387                      l791 03BD  
+                    l767 035A                      l759 034B                      l863 031B  
+                    l855 0317                      l785 0348                      l777 033C  
+                    l793 03BF                      l769 035E                      l857 0318  
+                    l779 033F                      l795 03C8                      l787 03AF  
+                    l859 0319                      l797 03CA                      l789 03B5  
+                    l799 03D0                      u200 03B5                      u201 03B4  
+                    u210 03BB                      u211 03B9                      u220 03BC  
+                    u230 03C8                      u150 034F                      u231 03C7  
+                    u151 034E                      u240 03D0                      u160 035A  
+                    u241 03CF                      u161 0359                      u250 03D7  
+                    u170 0363                      u251 03D6                      u171 0362  
+                    u180 033C                      u260 03DE                      u181 033B  
+                    u261 03DD                      u190 0345                      u270 03E5  
+                    u191 0344                      u271 03E4                      u280 0375  
+                    u281 0374                      fsr0 0004                      indf 0000  
+                   _main 0317                     _mode 0016                     btemp 004E  
+                   start 0000          __end_of_Display 03AF                    ?_main 0019  
+                  _PORTB 0006                    _TRISA 0085                    _TRISB 0086  
+                  _digit 000C                    _keyin 0015          __end_of_pattern 0011  
+                  pclath 000A                    status 0003                    wtemp0 004E  
+       __end_of_Debounce 034B          __initialization 03F7             __end_of_main 031E  
+                 ??_main 0000                ??_Display 0019                   _prekey 0014  
+__end_of__initialization 03FE           __pcstackCOMMON 0000             __pidataBANK0 0316  
+         _OPTION_REGbits 0081                ?_Debounce 0019               __pbssBANK0 000C  
+             __pmaintext 0317        __end_of_Stopwatch 03F7            _SystemInitial 0326  
+             ??_Debounce 0000            ?_TimerRefresh 0019               __stringtab 0001  
+                _Display 036A                  __ptext1 034B                  __ptext2 0326  
+                __ptext3 03AF                  __ptext4 036A                  __ptext5 0331  
+         ?_SystemInitial 0019            _DebounceTimer 0017                  _pattern 0007  
+         ??_TimerRefresh 0000                  clrloop0 031F     end_of_initialization 03FE  
+              _PORTAbits 0005               _prev_state 0012          ??_SystemInitial 0000  
+    start_initialization 03F7     __end_of_TimerRefresh 036A              __pdataBANK0 0018  
+              ___latbits 0000            __pcstackBANK0 0019                _Stopwatch 03AF  
+               ?_Display 0019                __pstrings 0001               ?_Stopwatch 0019  
+              _myCounter 0013                clear_ram0 031E              __stringbase 0006  
+               _Debounce 0331       __end_of__stringtab 0007              ??_Stopwatch 0000  
+           _TimerRefresh 034B                 _keyValue 0018    __end_of_SystemInitial 0331  
+             _INTCONbits 000B                stringcode 0001                 stringdir 0001  
+               stringtab 0001              _timecounter 0010  

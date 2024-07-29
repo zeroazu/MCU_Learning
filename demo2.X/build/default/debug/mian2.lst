@@ -1,0 +1,98 @@
+
+
+Microchip MPLAB XC8 Assembler V2.46 build 20240104201356 
+                                                                                                           Sun Jul 28 21:13:59 2024
+
+
+     1                           	processor	16F84A
+     2                           	pagewidth 132
+     3                           	psect	udata,global,class=RAM,space=1,delta=1,noexec
+     4                           	psect	udata_bank0,global,class=BANK0,space=1,delta=1,noexec
+     5                           	psect	code,global,class=CODE,delta=2
+     6                           	psect	data,global,class=STRCODE,delta=2,noexec
+     7                           	psect	edata,global,class=EEDATA,space=3,delta=2,noexec
+     8                           	psect	Por_Vec,global,class=CODE,delta=2
+     9                           	psect	Isr_Vec,global,class=CODE,delta=2
+    10                           	psect	MainCode,global,class=CODE,delta=2
+    11                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    12     0089                     
+    13                           	psect	edata
+    14     0000                     stk_offset	set	0
+    15     0000                     auto_size	set	0
+    16                           
+    17                           ; stack_auto defines a symbol /name/_offset which equates to the
+    18                           ; stack offset of the auto object in question
+    19     0000                     
+    20                           ; stack_param defines a symbol /name/_offset which equates to the
+    21                           ; stack offset of the parameter object in question
+    22     0000                     
+    23                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    24                           ; it also links in to the btemp symbol so that can be used
+    25     0000                     
+    26                           ; restore_stack adjusts the SP to remove all auto and parameter
+    27                           ; objects from the stack prior to returning from a function
+    28     0000                     
+    29                           	psect	Por_Vec
+    30     0000                     resetVec:	
+    31                           ;org 0x00
+    32                           ; goto main
+    33                           ;org 0x04
+    34                           ; goto interrupt
+    35                           
+    36     0000                     	pagesel	main
+    37     0000  2805               	goto	main
+    38                           
+    39                           	psect	Isr_Vec
+    40     0004                     interrupt:
+    41     0004  0009               	retfie
+    42                           
+    43                           	psect	MainCode
+    44     0005                     main:
+    45     0005  2008               	call	initial
+    46     0006                     loop:
+    47     0006  1406               	bsf	6,0
+    48                           
+    49                           ; btfsc PORTA, 4
+    50                           ; goto nolight
+    51                           ; goto light
+    52     0007  2806               	goto	loop
+    53     0008                     initial:	
+    54                           ;nolight:
+    55                           ; bcf PORTB, 0
+    56                           ; goto loop
+    57                           ;
+    58                           ;light:
+    59                           ; bsf PORTB, 0
+    60                           ; goto loop
+    61                           
+    62     0008  1683               	bsf	3,5
+    63     0009  30D2               	movlw	210
+    64     000A  0081               	movwf	129
+    65     000B  3010               	movlw	16
+    66     000C  0085               	movwf	133
+    67     000D  3000               	movlw	0
+    68     000E  0086               	movwf	134
+    69     000F  1283               	bcf	3,5
+    70     0010  0008               	return
+    71                           
+    72                           	psect	config
+    73                           
+    74                           ;Config register CONFIG @ 0x2007
+    75                           ;	Oscillator Selection bits
+    76                           ;	FOSC = HS, HS oscillator
+    77                           ;	Watchdog Timer
+    78                           ;	WDTE = OFF, WDT disabled
+    79                           ;	Power-up Timer Enable bit
+    80                           ;	PWRTE = OFF, Power-up Timer is disabled
+    81                           ;	Code Protection bit
+    82                           ;	CP = OFF, Code protection disabled
+    83     2007                     	org	8199
+    84     2007  3FFA               	dw	16378
+
+
+Microchip Technology PIC Macro Assembler V2.46 build 20240104201356 
+Symbol Table                                                                                               Sun Jul 28 21:13:59 2024
+
+                      main 0005                        loop 0006                       PORTB 0006                       TRISA 0085  
+                     TRISB 0086                      STATUS 0003                     initial 0008                  OPTION_REG 0081  
+                  resetVec 0000                   interrupt 0004  

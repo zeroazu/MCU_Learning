@@ -1,0 +1,508 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"20 main.c
+[; ;main.c: 20:     struct{
+[s S30 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . t244_122Hz t61Hz t30Hz t15Hz t7Hz t3Hz t2Hz ]
+"19
+[; ;main.c: 19: typedef union {
+[u S29 `S30 1 `uc 1 ]
+[n S29 . . tmr0Counter ]
+"32
+[; ;main.c: 32: typedef struct {
+[s S31 :2 `uc 1 ]
+[n S31 . var ]
+[p mainexit ]
+"13
+[; ;main.c: 13: void SystemInitial(void);
+[v _SystemInitial `(v ~T0 @X0 0 ef ]
+"14
+[; ;main.c: 14: void TimerRefresh (void);
+[v _TimerRefresh `(v ~T0 @X0 0 ef ]
+"15
+[; ;main.c: 15: void Debounce(void);
+[v _Debounce `(v ~T0 @X0 0 ef ]
+"16
+[; ;main.c: 16: void Stopwatch(void);
+[v _Stopwatch `(v ~T0 @X0 0 ef ]
+"17
+[; ;main.c: 17: void Display(void);
+[v _Display `(v ~T0 @X0 0 ef ]
+"390 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 390:     struct {
+[s S21 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"398
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 398:     struct {
+[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S22 . PS0 PS1 PS2 ]
+"389
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 389: typedef union {
+[u S20 `S21 1 `S22 1 ]
+[n S20 . . . ]
+"404
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 404: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
+[v _OPTION_REGbits `VS20 ~T0 @X0 0 e@129 ]
+"454
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 454: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"498
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 498: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"312
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 312:     struct {
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . RBIF INTF T0IF RBIE INTE T0IE EEIE GIE ]
+"322
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 322:     struct {
+[s S19 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S19 . . TMR0IF . TMR0IE ]
+"311
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 311: typedef union {
+[u S17 `S18 1 `S19 1 ]
+[n S17 . . . ]
+"329
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 329: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS17 ~T0 @X0 0 e@11 ]
+"172
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 172:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RA0 RA1 RA2 RA3 RA4 ]
+"171
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 171: typedef union {
+[u S11 `S12 1 ]
+[n S11 . . ]
+"180
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 180: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
+[v _PORTAbits `VS11 ~T0 @X0 0 e@5 ]
+"210
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 210: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"212
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 212: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"274
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 274: __asm("EEDATA equ 08h");
+[; <" EEDATA equ 08h ;# ">
+"281
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 281: __asm("EEADR equ 09h");
+[; <" EEADR equ 09h ;# ">
+"288
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 288: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"308
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 308: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"386
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 386: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"456
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 456: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"500
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 500: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"562
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 562: __asm("EECON1 equ 088h");
+[; <" EECON1 equ 088h ;# ">
+"606
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h: 606: __asm("EECON2 equ 089h");
+[; <" EECON2 equ 089h ;# ">
+"22 ./system.h
+[p x FOSC  =  XT         ]
+"23
+[p x WDTE  =  OFF        ]
+"24
+[p x PWRTE  =  OFF       ]
+"25
+[p x CP  =  OFF          ]
+"36 main.c
+[; ;main.c: 36: const unsigned char pattern[] = {
+[v _pattern `Cuc ~T0 @X0 -> 10 `i e ]
+[i _pattern
+:U ..
+-> -> 63 `i `uc
+-> -> 6 `i `uc
+-> -> 91 `i `uc
+-> -> 79 `i `uc
+-> -> 102 `i `uc
+-> -> 109 `i `uc
+-> -> 125 `i `uc
+-> -> 7 `i `uc
+-> -> 127 `i `uc
+-> -> 111 `i `uc
+..
+]
+"50
+[; ;main.c: 50: unsigned short timecounter;
+[v _timecounter `us ~T0 @X0 1 e ]
+"51
+[; ;main.c: 51: unsigned char DebounceTimer;
+[v _DebounceTimer `uc ~T0 @X0 1 e ]
+"52
+[; ;main.c: 52: unsigned char digit[4] = {0};
+[v _digit `uc ~T0 @X0 -> 4 `i e ]
+[i _digit
+:U ..
+-> -> 0 `i `uc
+..
+]
+"53
+[; ;main.c: 53: _Bool mode = 0;
+[v _mode `a ~T0 @X0 1 e ]
+[i _mode
+-> -> 0 `i `a
+]
+"54
+[; ;main.c: 54: _Bool keyin, prekey, keyValue = 1;
+[v _keyin `a ~T0 @X0 1 e ]
+[v _prekey `a ~T0 @X0 1 e ]
+[v _keyValue `a ~T0 @X0 1 e ]
+[i _keyValue
+-> -> 1 `i `a
+]
+"55
+[; ;main.c: 55: mycounter myCounter;
+[v _myCounter `S29 ~T0 @X0 1 e ]
+"56
+[; ;main.c: 56: TwoBitField prev_state;
+[v _prev_state `S31 ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"58
+[; ;main.c: 58: void main(){
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"59
+[; ;main.c: 59:     SystemInitial();
+[e ( _SystemInitial ..  ]
+"60
+[; ;main.c: 60:     while(1){
+[e :U 34 ]
+{
+"61
+[; ;main.c: 61:         TimerRefresh();
+[e ( _TimerRefresh ..  ]
+"62
+[; ;main.c: 62:  Debounce();
+[e ( _Debounce ..  ]
+"63
+[; ;main.c: 63:         Stopwatch();
+[e ( _Stopwatch ..  ]
+"64
+[; ;main.c: 64:         Display();
+[e ( _Display ..  ]
+"65
+[; ;main.c: 65:     }
+}
+[e :U 33 ]
+[e $U 34  ]
+[e :U 35 ]
+"66
+[; ;main.c: 66: }
+[e :UE 32 ]
+}
+"68
+[; ;main.c: 68: void SystemInitial(void){
+[v _SystemInitial `(v ~T0 @X0 1 ef ]
+{
+[e :U _SystemInitial ]
+[f ]
+"69
+[; ;main.c: 69:     OPTION_REGbits.PS = 0b010;
+[e = . . _OPTION_REGbits 0 0 -> -> 2 `i `uc ]
+"70
+[; ;main.c: 70:     OPTION_REGbits.T0CS = 0;
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+"71
+[; ;main.c: 71:     OPTION_REGbits.PSA = 0;
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+"72
+[; ;main.c: 72:     TRISA = 0b00010000;
+[e = _TRISA -> -> 16 `i `uc ]
+"73
+[; ;main.c: 73:     TRISB = 0b00000000;
+[e = _TRISB -> -> 0 `i `uc ]
+"74
+[; ;main.c: 74: }
+[e :UE 36 ]
+}
+"76
+[; ;main.c: 76: void TimerRefresh (void){
+[v _TimerRefresh `(v ~T0 @X0 1 ef ]
+{
+[e :U _TimerRefresh ]
+[f ]
+"77
+[; ;main.c: 77:     if (INTCONbits.T0IF){
+[e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 38  ]
+{
+"78
+[; ;main.c: 78:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:         myCounter.tmr0Counter ++;
+[e ++ . _myCounter 1 -> -> 1 `i `uc ]
+"80
+[; ;main.c: 80:  if (DebounceTimer != 0) DebounceTimer++;
+[e $ ! != -> _DebounceTimer `i -> 0 `i 39  ]
+[e ++ _DebounceTimer -> -> 1 `i `uc ]
+[e :U 39 ]
+"81
+[; ;main.c: 81:         if (mode) timecounter++;
+[e $ ! != -> _mode `i -> 0 `i 40  ]
+[e ++ _timecounter -> -> 1 `i `us ]
+[e :U 40 ]
+"82
+[; ;main.c: 82:  }
+}
+[e :U 38 ]
+"83
+[; ;main.c: 83: }
+[e :UE 37 ]
+}
+"85
+[; ;main.c: 85: void Debounce(void){
+[v _Debounce `(v ~T0 @X0 1 ef ]
+{
+[e :U _Debounce ]
+[f ]
+"86
+[; ;main.c: 86:     keyin = PORTAbits.RA4;
+[e = _keyin -> . . _PORTAbits 0 4 `a ]
+"87
+[; ;main.c: 87:     if (keyin != prekey) DebounceTimer = 1;
+[e $ ! != -> _keyin `i -> _prekey `i 42  ]
+[e = _DebounceTimer -> -> 1 `i `uc ]
+[e $U 43  ]
+"88
+[; ;main.c: 88:     else
+[e :U 42 ]
+"89
+[; ;main.c: 89:         if(DebounceTimer > 8){
+[e $ ! > -> _DebounceTimer `i -> 8 `i 44  ]
+{
+"90
+[; ;main.c: 90:             keyValue = keyin;
+[e = _keyValue _keyin ]
+"91
+[; ;main.c: 91:             DebounceTimer = 0;
+[e = _DebounceTimer -> -> 0 `i `uc ]
+"92
+[; ;main.c: 92:         }
+}
+[e :U 44 ]
+[e :U 43 ]
+"93
+[; ;main.c: 93:     prekey = keyin;
+[e = _prekey _keyin ]
+"94
+[; ;main.c: 94: }
+[e :UE 41 ]
+}
+"96
+[; ;main.c: 96: void Stopwatch(void){
+[v _Stopwatch `(v ~T0 @X0 1 ef ]
+{
+[e :U _Stopwatch ]
+[f ]
+"97
+[; ;main.c: 97:     if (keyValue == 0){
+[e $ ! == -> _keyValue `i -> 0 `i 46  ]
+{
+"98
+[; ;main.c: 98:         mode = !mode;
+[e = _mode -> -> ! != -> _mode `i -> 0 `i `i `a ]
+"99
+[; ;main.c: 99:         keyValue = 1;
+[e = _keyValue -> -> 1 `i `a ]
+"100
+[; ;main.c: 100:     }
+}
+[e :U 46 ]
+"101
+[; ;main.c: 101:     if(timecounter > 488){
+[e $ ! > -> _timecounter `ui -> -> 488 `i `ui 47  ]
+{
+"102
+[; ;main.c: 102:         timecounter = 0;
+[e = _timecounter -> -> 0 `i `us ]
+"103
+[; ;main.c: 103:         if (digit[0] == 9) {
+[e $ ! == -> *U + &U _digit * -> -> -> 0 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 9 `i 48  ]
+{
+"104
+[; ;main.c: 104:             digit[0] = 0;
+[e = *U + &U _digit * -> -> -> 0 `i `ui `ux -> -> # *U &U _digit `ui `ux -> -> 0 `i `uc ]
+"105
+[; ;main.c: 105:             if (digit[1] == 5) {
+[e $ ! == -> *U + &U _digit * -> -> -> 1 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 5 `i 49  ]
+{
+"106
+[; ;main.c: 106:                 digit[1] = 0;
+[e = *U + &U _digit * -> -> -> 1 `i `ui `ux -> -> # *U &U _digit `ui `ux -> -> 0 `i `uc ]
+"107
+[; ;main.c: 107:                 if (digit[2] == 9) {
+[e $ ! == -> *U + &U _digit * -> -> -> 2 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 9 `i 50  ]
+{
+"108
+[; ;main.c: 108:                     digit[2] = 0;
+[e = *U + &U _digit * -> -> -> 2 `i `ui `ux -> -> # *U &U _digit `ui `ux -> -> 0 `i `uc ]
+"109
+[; ;main.c: 109:                     if (digit[3] == 5)
+[e $ ! == -> *U + &U _digit * -> -> -> 3 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 5 `i 51  ]
+"110
+[; ;main.c: 110:                         digit[3] = 0;
+[e = *U + &U _digit * -> -> -> 3 `i `ui `ux -> -> # *U &U _digit `ui `ux -> -> 0 `i `uc ]
+[e $U 52  ]
+"111
+[; ;main.c: 111:                     else digit[3] = digit[3] + 1;
+[e :U 51 ]
+[e = *U + &U _digit * -> -> -> 3 `i `ui `ux -> -> # *U &U _digit `ui `ux -> + -> *U + &U _digit * -> -> -> 3 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 1 `i `uc ]
+[e :U 52 ]
+"112
+[; ;main.c: 112:                 } else digit[2] = digit[2] + 1;
+}
+[e $U 53  ]
+[e :U 50 ]
+[e = *U + &U _digit * -> -> -> 2 `i `ui `ux -> -> # *U &U _digit `ui `ux -> + -> *U + &U _digit * -> -> -> 2 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 1 `i `uc ]
+[e :U 53 ]
+"113
+[; ;main.c: 113:             } else digit[1] = digit[1] + 1;
+}
+[e $U 54  ]
+[e :U 49 ]
+[e = *U + &U _digit * -> -> -> 1 `i `ui `ux -> -> # *U &U _digit `ui `ux -> + -> *U + &U _digit * -> -> -> 1 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 1 `i `uc ]
+[e :U 54 ]
+"114
+[; ;main.c: 114:         } else digit[0] = digit[0] + 1;
+}
+[e $U 55  ]
+[e :U 48 ]
+[e = *U + &U _digit * -> -> -> 0 `i `ui `ux -> -> # *U &U _digit `ui `ux -> + -> *U + &U _digit * -> -> -> 0 `i `ui `ux -> -> # *U &U _digit `ui `ux `i -> 1 `i `uc ]
+[e :U 55 ]
+"115
+[; ;main.c: 115:     }
+}
+[e :U 47 ]
+"116
+[; ;main.c: 116: }
+[e :UE 45 ]
+}
+"118
+[; ;main.c: 118: void Display(void){
+[v _Display `(v ~T0 @X0 1 ef ]
+{
+[e :U _Display ]
+[f ]
+"119
+[; ;main.c: 119:     if(myCounter.t244_122Hz != prev_state.var){
+[e $ ! != -> . . _myCounter 0 0 `i -> . _prev_state 0 `i 57  ]
+{
+"120
+[; ;main.c: 120:         PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
+"121
+[; ;main.c: 121:         PORTAbits.RA0 = 0; PORTAbits.RA1 = 0; PORTAbits.RA2 = 0; PORTAbits.RA3 = 0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+[e = . . _PORTAbits 0 1 -> -> 0 `i `uc ]
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+"122
+[; ;main.c: 122:      switch (myCounter.t244_122Hz) {
+[e $U 59  ]
+{
+"123
+[; ;main.c: 123:             case 0:
+[e :U 60 ]
+"124
+[; ;main.c: 124:                 PORTB = pattern[digit[0]];
+[e = _PORTB *U + &U _pattern * -> *U + &U _digit * -> -> -> 0 `i `ui `ux -> -> # *U &U _digit `ui `ux `ux -> -> # *U &U _pattern `ui `ux ]
+"125
+[; ;main.c: 125:                 PORTAbits.RA0 = 1;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+"126
+[; ;main.c: 126:                 break;
+[e $U 58  ]
+"127
+[; ;main.c: 127:             case 1:
+[e :U 61 ]
+"128
+[; ;main.c: 128:                 PORTB = pattern[digit[1]];
+[e = _PORTB *U + &U _pattern * -> *U + &U _digit * -> -> -> 1 `i `ui `ux -> -> # *U &U _digit `ui `ux `ux -> -> # *U &U _pattern `ui `ux ]
+"129
+[; ;main.c: 129:                 PORTAbits.RA1 = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+"130
+[; ;main.c: 130:                 break;
+[e $U 58  ]
+"131
+[; ;main.c: 131:             case 2:
+[e :U 62 ]
+"132
+[; ;main.c: 132:                 PORTB = pattern[digit[2]];
+[e = _PORTB *U + &U _pattern * -> *U + &U _digit * -> -> -> 2 `i `ui `ux -> -> # *U &U _digit `ui `ux `ux -> -> # *U &U _pattern `ui `ux ]
+"133
+[; ;main.c: 133:                 PORTAbits.RA2 = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+"134
+[; ;main.c: 134:                 break;
+[e $U 58  ]
+"135
+[; ;main.c: 135:             case 3:
+[e :U 63 ]
+"136
+[; ;main.c: 136:                 PORTB = pattern[digit[3]];
+[e = _PORTB *U + &U _pattern * -> *U + &U _digit * -> -> -> 3 `i `ui `ux -> -> # *U &U _digit `ui `ux `ux -> -> # *U &U _pattern `ui `ux ]
+"137
+[; ;main.c: 137:                 PORTAbits.RA3 = 1;
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+"138
+[; ;main.c: 138:                 break;
+[e $U 58  ]
+"139
+[; ;main.c: 139:             default:
+[e :U 64 ]
+"140
+[; ;main.c: 140:                 break;
+[e $U 58  ]
+"141
+[; ;main.c: 141:         }
+}
+[e $U 58  ]
+[e :U 59 ]
+[e [\ . . _myCounter 0 0 , $ -> 0 `i 60
+ , $ -> 1 `i 61
+ , $ -> 2 `i 62
+ , $ -> 3 `i 63
+ 64 ]
+[e :U 58 ]
+"142
+[; ;main.c: 142:         prev_state.var = myCounter.t244_122Hz;
+[e = . _prev_state 0 . . _myCounter 0 0 ]
+"143
+[; ;main.c: 143:     }
+}
+[e :U 57 ]
+"144
+[; ;main.c: 144: }
+[e :UE 56 ]
+}

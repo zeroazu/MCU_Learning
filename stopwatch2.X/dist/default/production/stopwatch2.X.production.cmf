@@ -1,0 +1,290 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$build/default/production/main.o
+Isr_Vec CODE 0 4 4 1 2 1
+Por_Vec CODE 0 0 0 1 2 1
+MainCode CODE 0 5 5 98 2 1
+MainData RAM 1 C C E 1 1
+config CONFIG 4 2007 2007 1 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 1A-4D 1
+BANK0 1A-4D 1
+CONST 1-3 2
+CONST 9D-3FF 2
+ENTRY 1-3 2
+ENTRY 9D-3FF 2
+IDLOC 2000-2003 2
+CODE 1-3 2
+CODE 9D-3FF 2
+SFR0 2-7 1
+EEDATA 2100-213F 2
+STRCODE 1-3 2
+STRCODE 9D-3FF 2
+STRING 1-3 2
+STRING 9D-3FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$build/default/production/main.o
+5 MainCode CODE >67:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+6 MainCode CODE >69:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+7 MainCode CODE >70:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+8 MainCode CODE >71:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+9 MainCode CODE >72:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+A MainCode CODE >73:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+B MainCode CODE >76:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+C MainCode CODE >77:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+D MainCode CODE >78:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+E MainCode CODE >79:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+F MainCode CODE >80:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+10 MainCode CODE >81:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+11 MainCode CODE >82:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+12 MainCode CODE >83:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+13 MainCode CODE >84:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+14 MainCode CODE >85:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+15 MainCode CODE >86:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+16 MainCode CODE >88:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+17 MainCode CODE >91:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+18 MainCode CODE >92:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+19 MainCode CODE >93:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+1A MainCode CODE >94:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+1B MainCode CODE >95:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+1C MainCode CODE >96:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+1D MainCode CODE >97:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+1E MainCode CODE >98:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+1F MainCode CODE >99:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+20 MainCode CODE >100:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+21 MainCode CODE >101:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+22 MainCode CODE >102:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+23 MainCode CODE >103:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+24 MainCode CODE >104:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+25 MainCode CODE >106:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+26 MainCode CODE >108:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+27 MainCode CODE >109:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+28 MainCode CODE >111:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+29 MainCode CODE >114:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+2A MainCode CODE >115:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+2B MainCode CODE >116:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+2C MainCode CODE >117:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+2D MainCode CODE >118:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+2E MainCode CODE >120:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+2F MainCode CODE >121:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+30 MainCode CODE >122:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+31 MainCode CODE >123:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+32 MainCode CODE >124:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+33 MainCode CODE >125:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+34 MainCode CODE >127:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+35 MainCode CODE >128:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+36 MainCode CODE >129:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+37 MainCode CODE >130:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+38 MainCode CODE >131:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+39 MainCode CODE >133:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+3A MainCode CODE >134:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+3B MainCode CODE >135:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+3C MainCode CODE >136:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+3D MainCode CODE >137:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+3E MainCode CODE >139:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+3F MainCode CODE >140:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+40 MainCode CODE >141:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+41 MainCode CODE >142:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+42 MainCode CODE >143:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+43 MainCode CODE >145:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+44 MainCode CODE >146:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+45 MainCode CODE >147:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+46 MainCode CODE >148:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+47 MainCode CODE >149:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+48 MainCode CODE >150:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+49 MainCode CODE >152:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+4A MainCode CODE >153:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+4B MainCode CODE >155:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+4C MainCode CODE >156:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+4D MainCode CODE >158:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+4E MainCode CODE >159:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+4F MainCode CODE >161:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+50 MainCode CODE >162:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+51 MainCode CODE >164:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+52 MainCode CODE >167:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+53 MainCode CODE >168:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+54 MainCode CODE >169:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+55 MainCode CODE >170:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+56 MainCode CODE >171:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+57 MainCode CODE >172:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+58 MainCode CODE >173:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+59 MainCode CODE >174:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+5A MainCode CODE >175:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+5B MainCode CODE >176:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+5C MainCode CODE >177:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+5D MainCode CODE >178:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+5E MainCode CODE >179:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+5F MainCode CODE >180:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+60 MainCode CODE >181:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+61 MainCode CODE >182:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+62 MainCode CODE >183:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+63 MainCode CODE >187:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+64 MainCode CODE >188:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+65 MainCode CODE >189:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+66 MainCode CODE >190:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+67 MainCode CODE >191:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+68 MainCode CODE >192:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+69 MainCode CODE >196:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+6A MainCode CODE >197:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+6B MainCode CODE >198:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+6C MainCode CODE >199:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+6D MainCode CODE >200:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+6E MainCode CODE >201:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+6F MainCode CODE >205:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+70 MainCode CODE >206:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+71 MainCode CODE >207:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+72 MainCode CODE >208:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+73 MainCode CODE >209:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+74 MainCode CODE >210:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+75 MainCode CODE >214:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+76 MainCode CODE >215:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+77 MainCode CODE >216:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+78 MainCode CODE >217:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+79 MainCode CODE >218:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+7A MainCode CODE >219:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+7B MainCode CODE >221:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+7C MainCode CODE >222:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+7D MainCode CODE >223:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+7E MainCode CODE >225:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+7F MainCode CODE >228:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+80 MainCode CODE >229:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+81 MainCode CODE >230:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+82 MainCode CODE >231:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+83 MainCode CODE >232:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+84 MainCode CODE >233:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+85 MainCode CODE >234:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+86 MainCode CODE >235:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+87 MainCode CODE >236:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+88 MainCode CODE >237:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+89 MainCode CODE >238:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+8A MainCode CODE >241:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+8B MainCode CODE >242:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+8C MainCode CODE >243:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+8D MainCode CODE >244:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+8E MainCode CODE >245:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+8F MainCode CODE >246:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+90 MainCode CODE >247:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+91 MainCode CODE >248:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+92 MainCode CODE >249:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+93 MainCode CODE >250:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+94 MainCode CODE >251:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+95 MainCode CODE >252:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+96 MainCode CODE >253:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+97 MainCode CODE >254:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+98 MainCode CODE >255:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+99 MainCode CODE >256:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+9A MainCode CODE >257:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+9B MainCode CODE >258:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+9C MainCode CODE >259:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+4 Isr_Vec CODE >35:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+0 Por_Vec CODE >30:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+0 Por_Vec CODE >31:C:\Users\kuovi\MPLABXProjects\stopwatch2.X\main.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Hspace_0 9D 0 ABS 0 - -
+__Hspace_1 1A 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+__Hudata_bank0 A 0 ABS 0 udata_bank0 -
+__L__absolute__ 0 0 ABS 0 __absolute__ -
+__LIsr_Vec 8 0 CODE 0 Isr_Vec -
+resetVec 0 0 CODE 0 Por_Vec build/default/production/main.o
+__LPor_Vec 0 0 CODE 0 Por_Vec -
+__Hedata A 0 ABS 0 edata -
+__Hudata A 0 ABS 0 udata -
+__HIsr_Vec A 0 CODE 0 Isr_Vec -
+__Hconfig 4010 0 CONFIG 4 config -
+__Ledata A 0 ABS 0 edata -
+__Ludata A 0 ABS 0 udata -
+__Hcode A 0 ABS 0 code -
+__Hdata A 0 ABS 0 data -
+__Lcode A 0 ABS 0 code -
+__Ldata A 0 ABS 0 data -
+__HPor_Vec 2 0 CODE 0 Por_Vec -
+__S0 9D 0 ABS 0 - -
+__S1 1A 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__Lconfig 0 0 CONFIG 4 config -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__LMainCode A 0 ABS 0 MainCode -
+__LMainData A 0 ABS 0 MainData -
+__Ludata_bank0 A 0 ABS 0 udata_bank0 -
+__H__absolute__ 0 0 ABS 0 __absolute__ -
+__HMainCode A 0 ABS 0 MainCode -
+__HMainData A 0 ABS 0 MainData -
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+Isr_Vec 0 4 8 99 2
+Por_Vec 0 0 0 1 2
+MainData 1 C C E 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

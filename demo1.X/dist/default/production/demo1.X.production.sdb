@@ -1,0 +1,95 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F84A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"34 C:\Users\kuovi\MPLABXProjects\demo1.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"49
+[v _SystemInitial SystemInitial `(v  1 e 1 0 ]
+[s S70 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+]
+"180 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h
+[u S76 . 1 `S70 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES76  1 e 1 @5 ]
+[s S85 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"227
+[u S94 . 1 `S85 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES94  1 e 1 @6 ]
+[s S38 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 EEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"329
+[s S47 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S52 . 1 `S38 1 . 1 0 `S47 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES52  1 e 1 @11 ]
+[s S106 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"404
+[s S113 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S117 . 1 `S106 1 . 1 0 `S113 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES117  1 e 1 @129 ]
+"454
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"498
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S22 . 1 `uc 1 t122Hz 1 0 :1:0 
+`uc 1 t61Hz 1 0 :1:1 
+`uc 1 t30Hz 1 0 :1:2 
+`uc 1 t15Hz 1 0 :1:3 
+`uc 1 t7Hz 1 0 :1:4 
+`uc 1 t3Hz 1 0 :1:5 
+`uc 1 t2Hz 1 0 :1:6 
+`uc 1 t1Hz 1 0 :1:7 
+]
+"32 C:\Users\kuovi\MPLABXProjects\demo1.X\main.c
+[u S31 . 1 `S22 1 . 1 0 `uc 1 tmr0Counter 1 0 ]
+[v _myCounter myCounter `S31  1 e 1 0 ]
+"34
+[v _main main `(v  1 e 1 0 ]
+{
+"47
+} 0
+"49
+[v _SystemInitial SystemInitial `(v  1 e 1 0 ]
+{
+"55
+} 0

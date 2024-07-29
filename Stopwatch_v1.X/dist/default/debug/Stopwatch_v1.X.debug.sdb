@@ -1,0 +1,130 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F84A ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"58 C:\Users\kuovi\MPLABXProjects\Stopwatch_v1.X\main.c
+[v _main main `(v  1 e 1 0 ]
+"68
+[v _SystemInitial SystemInitial `(v  1 e 1 0 ]
+"76
+[v _TimerRefresh TimerRefresh `(v  1 e 1 0 ]
+"85
+[v _Debounce Debounce `(v  1 e 1 0 ]
+"96
+[v _Stopwatch Stopwatch `(v  1 e 1 0 ]
+"118
+[v _Display Display `(v  1 e 1 0 ]
+[s S115 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+]
+"180 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f84a.h
+[u S121 . 1 `S115 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES121  1 e 1 @5 ]
+"210
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S83 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 EEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"329
+[s S92 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S97 . 1 `S83 1 . 1 0 `S92 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES97  1 e 1 @11 ]
+[s S55 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"404
+[s S62 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S66 . 1 `S55 1 . 1 0 `S62 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES66  1 e 1 @129 ]
+"454
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"498
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"36 C:\Users\kuovi\MPLABXProjects\Stopwatch_v1.X\main.c
+[v _pattern pattern `DC[10]uc  1 e 10 0 ]
+"50
+[v _timecounter timecounter `us  1 e 2 0 ]
+"51
+[v _DebounceTimer DebounceTimer `uc  1 e 1 0 ]
+"52
+[v _digit digit `[4]uc  1 e 4 0 ]
+"53
+[v _mode mode `a  1 e 1 0 ]
+"54
+[v _keyin keyin `a  1 e 1 0 ]
+[v _prekey prekey `a  1 e 1 0 ]
+[v _keyValue keyValue `a  1 e 1 0 ]
+[s S22 . 1 `uc 1 t244_122Hz 1 0 :2:0 
+`uc 1 t61Hz 1 0 :1:2 
+`uc 1 t30Hz 1 0 :1:3 
+`uc 1 t15Hz 1 0 :1:4 
+`uc 1 t7Hz 1 0 :1:5 
+`uc 1 t3Hz 1 0 :1:6 
+`uc 1 t2Hz 1 0 :1:7 
+]
+"55
+[u S30 . 1 `S22 1 . 1 0 `uc 1 tmr0Counter 1 0 ]
+[v _myCounter myCounter `S30  1 e 1 0 ]
+[s S33 . 1 `uc 1 var 1 0 :2:0 
+]
+"56
+[v _prev_state prev_state `S33  1 e 1 0 ]
+"58
+[v _main main `(v  1 e 1 0 ]
+{
+"66
+} 0
+"76
+[v _TimerRefresh TimerRefresh `(v  1 e 1 0 ]
+{
+"83
+} 0
+"68
+[v _SystemInitial SystemInitial `(v  1 e 1 0 ]
+{
+"74
+} 0
+"96
+[v _Stopwatch Stopwatch `(v  1 e 1 0 ]
+{
+"116
+} 0
+"118
+[v _Display Display `(v  1 e 1 0 ]
+{
+"144
+} 0
+"85
+[v _Debounce Debounce `(v  1 e 1 0 ]
+{
+"94
+} 0

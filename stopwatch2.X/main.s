@@ -10,6 +10,13 @@
 ;   My study project of PIC16f84A using assembly
 ;   A simple time counter with 4-digit 7-segment displyer
 ;
+; Schematic:
+;   RA0,RA1,RA2,RA3: output to digit 0~3 of 7-segment display
+;   RA4: button input for start/pause (with external pull high resistor)
+;   RB0~RB7: output to segment a~g of 7-segment display
+;   OSC1,OSC2: 4MHz crystal oscillator input
+;   MCLR: master reset button
+;
 ; Add this line in the project properties box, pic-as Global Options -> Additional options: 
 ;   -Wa,-a -Wl,-pPor_Vec=0h,-pIsr_Vec=4h
 ; ==================   

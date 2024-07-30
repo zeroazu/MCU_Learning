@@ -11,7 +11,7 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"58 C:\Users\kuovi\MPLABXProjects\Stopwatch_v1.X\main.c
+"58 C:\Users\kuovi\MPLABXProjects\MCU_Learning\Stopwatch_v1.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "68
 [v _SystemInitial SystemInitial `(v  1 e 1 0 ]
@@ -69,7 +69,7 @@
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "498
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-"36 C:\Users\kuovi\MPLABXProjects\Stopwatch_v1.X\main.c
+"36 C:\Users\kuovi\MPLABXProjects\MCU_Learning\Stopwatch_v1.X\main.c
 [v _pattern pattern `DC[10]uc  1 e 10 0 ]
 "50
 [v _timecounter timecounter `us  1 e 2 0 ]

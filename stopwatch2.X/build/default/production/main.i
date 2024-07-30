@@ -1,10 +1,25 @@
 # 1 "main.s"
 # 1 "<built-in>" 1
 # 1 "main.s" 2
+; File:     main.S
+; Target:   PIC16f84A-04
+; Author:   zeroazu
+; Date:     2024-07-30
+; Compiler: pic-as(v2.46)
+; IDE:      MPLABX v6.20
+;
+; Description:
+;
+;   My study project of PIC16f84A using assembly
+; A simple time counter with 4-digit 7-segment displyer
+;
+; Add this line in the project properties box, pic-as Global Options -> Additional options: 
+; -Wa,-a -Wl,-pPor_Vec=0h,-pIsr_Vec=4h
+; ==================
     PROCESSOR 16F84A
     PAGEWIDTH 132
     RADIX DEC
-
+; ==================
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.inc" 1 3
 
@@ -453,14 +468,11 @@ stk_offset SET 0
 auto_size SET 0
 ENDM
 # 7 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.inc" 2 3
-# 6 "main.s" 2
-
-    CONFIG FOSC = XT
+# 21 "main.s" 2
+ CONFIG FOSC = XT
     CONFIG WDTE = OFF
     CONFIG PWRTE = OFF
     CONFIG CP = OFF
-; Add this line in the project properties box, pic-as Global Options -> Additional options: 
-; -Wa,-a -Wl,-pPor_Vec=0h,-pIsr_Vec=4h
 ; ==================
 DEBOUNCE_TIME equ 8
 ONESECOND equ 488
@@ -500,19 +512,6 @@ digit3: DS 1
 state: DS 1
 prev_state: DS 1
 ; ==================
-;PSECT ConstData,global,class=CODE,delta=2
-;pattern:
-; DB 0b00111111 ; 0
-; DB 0b00000110 ; 1
-; DB 0b01011011 ; 2
-; DB 0b01001111 ; 3
-; DB 0b01100110 ; 4
-; DB 0b01101101 ; 5
-; DB 0b01111101 ; 6
-; DB 0b00000111 ; 7
-; DB 0b01111111 ; 8
-; DB 0b01101111 ; 9
-; ==================
 PSECT MainCode,global,class=CODE,delta=2
 main:
     call initial
@@ -544,17 +543,18 @@ Debounce:
     movwf keyin
     subwf prekey, W
     btfss STATUS, STATUS_Z_POSITION ; if keyin!=prekey -> Z=0
-    goto DebounceLoop1
-    movf DebounceTimer, W
+    goto DebounceLoop1 ; Z=0 -> keyin!=prekey
+    movf DebounceTimer, W ; Z=1
     sublw DEBOUNCE_TIME
-    btfss STATUS, STATUS_C_POSITION ; if DebounceTimer<DEBOUNCE_TIME -> C=0(borrow)
-    goto DebounceLoop2 ; C=0(borrow)
-    movf keyin, W ; C=1(no borrow)
+    btfsc STATUS, STATUS_C_POSITION ; if DebounceTimer<DEBOUNCE_TIME -> C=0(borrow)
+    goto DebounceLoop2 ; C=0(borrow) -> DebounceTimer<DEBOUNCE_TIME
+    movf keyin, W ; C=1(no borrow) -> DebounceTimer>DEBOUNCE_TIME -> output
     movwf keyValue
     clrf DebounceTimer
     goto DebounceLoop2
 DebounceLoop1:
-    bsf DebounceTimer, 0 ; set DebounceTimer=1
+    movlw 1
+    movwf DebounceTimer
 DebounceLoop2:
     movf keyin, W
     movwf prekey
@@ -570,8 +570,19 @@ Stopwatch:
 StopwatchLoop1:
     movf timecounter+1, W
     sublw HIGH(ONESECOND) ; 488 = 01E8
-    btfss STATUS, STATUS_C_POSITION ; if timecounter>ONESECOND -> C=1
-    goto End_Stopwatch
+    btfss STATUS, STATUS_Z_POSITION ; H(timecounter)=H(488) -> Z=1
+    goto StopwatchLoop2; check High
+    ; L-L
+    movf timecounter, W
+    sublw LOW(ONESECOND) ; 488 = 01E8
+    btfss STATUS, STATUS_C_POSITION ; if L(timecounter)>L(488) -> C=1
+    goto StopwatchLoop3 ; C=0
+    goto End_Stopwatch ; C=1
+StopwatchLoop2:
+    btfss STATUS, STATUS_C_POSITION
+    goto StopwatchLoop3 ; C=0 -> H(timecounter)>H(488)
+    goto End_Stopwatch ; C=1
+StopwatchLoop3:
     clrf timecounter
     clrf timecounter+1
     ; if digit0=9
@@ -633,36 +644,32 @@ Display:
     goto case2
     goto case3
 case0:
-; movlw HIGH(seven_segment_code)
-; movwf PCLATH
-    clrf PCLATH
+    movlw HIGH(seven_segment_code)
+    movwf PCLATH
     movf digit0, W
     call seven_segment_code
     movwf PORTB
     bsf PORTA, 0
     goto DisplayLoop1
 case1:
-; movlw HIGH(seven_segment_code)
-; movwf PCLATH
-    clrf PCLATH
+    movlw HIGH(seven_segment_code)
+    movwf PCLATH
     movf digit1, W
     call seven_segment_code
     movwf PORTB
     bsf PORTA, 1
     goto DisplayLoop1
 case2:
-; movlw HIGH(seven_segment_code)
-; movwf PCLATH
-    clrf PCLATH
+    movlw HIGH(seven_segment_code)
+    movwf PCLATH
     movf digit2, W
     call seven_segment_code
     movwf PORTB
     bsf PORTA, 2
     goto DisplayLoop1
 case3:
-; movlw HIGH(seven_segment_code)
-; movwf PCLATH
-    clrf PCLATH
+    movlw HIGH(seven_segment_code)
+    movwf PCLATH
     movf digit3, W
     call seven_segment_code
     movwf PORTB
@@ -703,6 +710,9 @@ initial:
     movwf digit1
     movwf digit2
     movwf digit3
+    movwf timecounter
+    movwf timecounter+1
+    movwf DebounceTimer
     movlw 0b00010000
     movwf keyin
     movwf prekey

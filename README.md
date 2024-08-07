@@ -1,6 +1,6 @@
 # MCU Learning
 這是2024年暑假期間自學 MCU 的內容與成果。
-
+![picture](picture/P_20240730_215746.jpg)
 ## 學習內容
 - PIC16F84A-04
 - debounce、timer、states、scan display等程式原理

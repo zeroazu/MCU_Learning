@@ -25,7 +25,7 @@
 - **demo1.x：**
 以C語言撰寫閃爍的LED(部份內容被Stopwatch_v1.x覆寫)。
 - **Stopwatch_v1.x：**
-以C語言纂寫stopwatch
+以C語言撰寫stopwatch
 - **demo2.x：**
 以assembly語言撰寫閃爍的LED
 - **stopwatch2.x：**
